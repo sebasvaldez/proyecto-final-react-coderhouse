@@ -1,26 +1,19 @@
 import "./NavBar.css";
-import {
-  Container,
-  Nav,
-  Navbar,
-  Dropdown,
-  Form,
-  Button,
-} from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "./assets/dog_lover_logo.png";
 import Cartwidget from "../Cartwidget/Cartwidget";
-import SearchIcon from "../SearchIcon/SearchIcon.jsx";
+import FormSearch from "../FormSearch/FormSearch";
 
 const NavBar = () => {
   return (
     <Navbar className="bg-navbar " expand="lg">
       <Container>
-        {/* <figure className="logo-png">
-        <Link to="/">
-              <img src={logo} alt="" />
-            </Link>
-        </figure> */}
+        <figure className="logo-png">
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
+        </figure>
         <div className="d-lg-none">
           <Cartwidget />
         </div>
@@ -41,17 +34,9 @@ const NavBar = () => {
               Snacks
             </Link>
           </Nav>
-          <Form className="d-flex" size="sm">
-            <Form.Control
-              type="search"
-              placeholder="Buscar"
-              className="me-2"
-              aria-label="Search"
-            />
-            <SearchIcon />  
-           
-          </Form>
+
         </Navbar.Collapse>
+          <FormSearch />
       </Container>
       <div className="d-none d-lg-flex mx-2">
         <Cartwidget />

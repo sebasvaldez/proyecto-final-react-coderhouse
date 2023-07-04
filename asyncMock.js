@@ -40,9 +40,24 @@ export const getProductById = async (id) => {
 
 
 //filtro por categoria
-export const filterCategory = async (arr, categoriaId) => {
-  const newArr = await arr.filter((item) => item.categoria_id === categoriaId);
-  return newArr;
+// export const filterCategory = async (arr, categoria) => {
+//   const newArr = await arr.filter((item) => item.categoria == categoria);
+//   return newArr;
+// };
+
+export const filterCategory = async (categoria) => {
+
+  const categoryRef= collection(db, "products");
+  const q =  query(categoryRef, where("categoria", "==", categoria));
+  const querySnapshot = await getDocs(q);
+  const response = [];
+  querySnapshot.docs.map((doc) => {
+    response.push({ ...doc.data(), id: doc.id });
+  });
+  return response;
 };
 
-//buscador por nombre
+
+//buscador por palabra clave
+
+

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form } from 'react-bootstrap'
+import SearchIcon from '../SearchIcon/SearchIcon.jsx' 
 
 const FormSearch = () => {
   return (
@@ -10,7 +11,7 @@ const FormSearch = () => {
       className="me-2"
       aria-label="Search"
     />
-    
+    <SearchIcon />
    
   </Form>
   )
