@@ -11,6 +11,7 @@ const ItemListContainer = () => {
     getProducts().then((response) => setProducts(response));
   }, []);
 
+  console.log(products)
   return (
     <div className="imgContainer">
       <CardImages products={products} />;

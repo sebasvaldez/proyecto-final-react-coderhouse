@@ -39,11 +39,6 @@ export const getProductById = async (id) => {
 };
 
 
-//filtro por categoria
-// export const filterCategory = async (arr, categoria) => {
-//   const newArr = await arr.filter((item) => item.categoria == categoria);
-//   return newArr;
-// };
 
 export const filterCategory = async (categoria) => {
 

@@ -5,17 +5,24 @@ import logo from "./assets/dog_lover_logo.png";
 import Cartwidget from "../Cartwidget/Cartwidget";
 import FormSearch from "../FormSearch/FormSearch";
 
+
 const NavBar = () => {
+
+
+
+
   return (
     <Navbar className="bg-navbar " expand="lg">
       <Container>
         <figure className="logo-png">
-          <Link to="/">
+          <Link to="">
             <img src={logo} alt="" />
           </Link>
         </figure>
         <div className="d-lg-none">
-          <Cartwidget />
+        <Link to="cart/cartlist">
+        <Cartwidget />
+        </Link>
         </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -39,7 +46,9 @@ const NavBar = () => {
           <FormSearch />
       </Container>
       <div className="d-none d-lg-flex mx-2">
+        <Link to="cart/cartlist">
         <Cartwidget />
+        </Link>
       </div>
     </Navbar>
   );

@@ -1,5 +1,5 @@
 import Button from "react-bootstrap/Button";
-import './SearchIcon.css'
+import "./SearchIcon.css";
 const SearchIcon = () => {
   return (
     <Button className="button-search" variant="outline-success" size="sm">

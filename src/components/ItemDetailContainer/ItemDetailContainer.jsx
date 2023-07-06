@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
   }, [id]);
   return (
     <div>
-      <ItemDetail {...product} />
+      <ItemDetail {...product} id={id} />
     </div>
   );
 };
