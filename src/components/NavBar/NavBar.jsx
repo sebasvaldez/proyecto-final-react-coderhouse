@@ -19,8 +19,8 @@ const NavBar = () => {
             <img src={logo} alt="" />
           </Link>
         </figure>
-        <div className="d-lg-none">
-        <Link to="cart/cartlist">
+        <div className="d-lg-none text-decoration-none">
+        <Link className="text-decoration-none" to="cart/cartlist">
         <Cartwidget />
         </Link>
         </div>
@@ -46,7 +46,7 @@ const NavBar = () => {
           <FormSearch />
       </Container>
       <div className="d-none d-lg-flex mx-2">
-        <Link to="cart/cartlist">
+        <Link className="text-decoration-none" to="cart/cartlist">
         <Cartwidget />
         </Link>
       </div>

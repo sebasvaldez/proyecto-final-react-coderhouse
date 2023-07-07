@@ -5,6 +5,7 @@ import {
   doc,
   where,
   getDoc,
+  addDoc,
 } from "firebase/firestore";
 import { db } from "./src/firebase/firebase.config.js";
 
@@ -28,22 +29,19 @@ export const getProductById = async (id) => {
   try {
     const docRef = doc(db, "products", id);
     const docSnap = await getDoc(docRef);
-    if(docSnap.exists()){
-        return docSnap.data();
-    }else{
-        console.log("No se encuentra el producto")
+    if (docSnap.exists()) {
+      return docSnap.data();
+    } else {
+      console.log("No se encuentra el producto");
     }
   } catch (error) {
     console.log(error);
   }
 };
 
-
-
 export const filterCategory = async (categoria) => {
-
-  const categoryRef= collection(db, "products");
-  const q =  query(categoryRef, where("categoria", "==", categoria));
+  const categoryRef = collection(db, "products");
+  const q = query(categoryRef, where("categoria", "==", categoria));
   const querySnapshot = await getDocs(q);
   const response = [];
   querySnapshot.docs.map((doc) => {
@@ -52,7 +50,13 @@ export const filterCategory = async (categoria) => {
   return response;
 };
 
+//cargar orden de compras en firebase
 
-//buscador por palabra clave
-
-
+export const createOrder = async (order) => {
+  try {
+    const docRef = await addDoc(collection(db, "purchaseorders"), {order});
+    console.log("Document written with ID: ", docRef.id);
+  } catch (error) {
+    console.error("Error adding document: ", error);  
+  }
+};

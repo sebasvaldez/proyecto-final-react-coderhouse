@@ -1,0 +1,11 @@
+.check-form{
+   padding: 1rem;
+   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+   background-color: whitesmoke;
+}
+
+div:where(.swal2-container).swal2-center>.swal2-popup{
+    width:18em!important;
+    height: 19em!important;
+    
+}

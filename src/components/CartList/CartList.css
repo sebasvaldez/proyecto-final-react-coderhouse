@@ -1,0 +1,8 @@
+@media all and (min-width: 375px) {
+  .cart-shop-img {
+    width: 160px;
+  }
+  .cart-shop-img img {
+    width: 100%;
+  }
+}
