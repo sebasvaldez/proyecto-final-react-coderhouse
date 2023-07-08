@@ -51,13 +51,7 @@ const CartListPage = () => {
           );
         })}
         <h2>Total price: {totalPrice}</h2>
-        <button
-          onClick={() => {
-            createOrder(cart);
-          }}
-        >
-          checkout
-        </button>
+        
 
         <CheckOutForm />
       </div>

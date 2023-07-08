@@ -15,9 +15,7 @@ const AestheticPage = () => {
   return <div className='imgContainer'>
     <CardImages products={products} />
   </div>;
-  // return <div>
-  //   <h1>Aesthetic Page</h1>
-  // </div>
+  
 };
 
 export default AestheticPage;

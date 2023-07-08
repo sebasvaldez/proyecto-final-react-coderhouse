@@ -54,9 +54,11 @@ export const filterCategory = async (categoria) => {
 
 export const createOrder = async (order) => {
   try {
-    const docRef = await addDoc(collection(db, "purchaseorders"), {order});
+    const docRef = await addDoc(collection(db, "purchaseorders"), { order });
     console.log("Document written with ID: ", docRef.id);
+    const numId = docRef.id;
+    return numId;
   } catch (error) {
-    console.error("Error adding document: ", error);  
+    console.error("Error adding document: ", error);
   }
 };

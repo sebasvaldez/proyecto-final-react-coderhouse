@@ -3,3 +3,26 @@
     color: black;
    
 }
+
+@media all and (min-width:375px){
+    .card-styles{
+        width: 10rem;
+        margin-top: 1rem;
+    }
+}
+
+
+@media all and (min-width:78px){
+    .card-styles{
+        width: 20rem;
+        margin-top: 1rem;
+    }
+}
+
+
+@media all and (min-width:1024px){
+    .card-styles{
+        width: 20rem;
+        margin-top: 1rem;
+    }
+}

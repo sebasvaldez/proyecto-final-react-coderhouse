@@ -1,20 +1,51 @@
-@media all and (min-width:375px){
-  .bg-navbar {
-    border-radius: 7px;
-    background-color: #c7dcca;
-    
-  
-  }
-  .logo-png {
-    width: 60px;
-    margin-right: 20px;
-  }
-  .logo-png img {
+@media all and (min-width: 375px) {
+  .sli-img {
     width: 100%;
-  }
-  .logo-png figure{
     margin: 0;
   }
+  .sli-img img {
+    width: 100%;
+  }
+
+  .bg-navbar {
+    background: #11998e; 
+    background: -webkit-linear-gradient(
+      to right,
+      #38ef7d,
+      #11998e
+    ); 
+    background: linear-gradient(
+      to right,
+      #38ef7d,
+      #11998e
+    );
+  }
+  .bg-navbar a{
+    text-decoration: none;
+    
+  }
+  .logo-png {
+    font-family: Arial, sans-serif; 
+    font-weight: bold; 
+    font-size: 24px; 
+    color: #0f0e0e; 
+    text-shadow: 2px 2px 7px rgba(196, 159, 159, 0.5); 
+  }
+  .logo-png a {
+    text-decoration: none;
+  }
+  .title-logo{
+    font-family: Arial, sans-serif; 
+    font-weight: bold; 
+    font-size: 24px; 
+    color: #0f0e0e; 
+    text-shadow: 2px 2px 7px rgba(196, 159, 159, 0.5);  
+  }
+  .title-logo a{
+    text-decoration: none;
+    color: white;
+  }
+ 
 
   .link {
     margin: 0 10px;
@@ -23,16 +54,14 @@
     font-size: 1.2rem;
     font-weight: 600;
     transition: 0.5s;
-    padding-right: .3rem;
-    
+    padding-right: 0.3rem;
   }
   .link:hover {
     color: #c7dcca;
     background-color: #2c2c2c;
     border-radius: 7px;
-
   }
-  .menu-nav{
+  .menu-nav {
     display: flex;
     justify-content: center;
   }
@@ -40,13 +69,8 @@
 
 
 @media all and (min-width: 1024px) {
-  
-  
-  
-  
   .CartWidget {
     width: 30px;
     margin-right: 20px;
   }
-  
 }

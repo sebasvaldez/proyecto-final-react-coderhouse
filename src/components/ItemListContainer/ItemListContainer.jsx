@@ -11,9 +11,10 @@ const ItemListContainer = () => {
     getProducts().then((response) => setProducts(response));
   }, []);
 
-  console.log(products)
+  
   return (
     <div className="imgContainer">
+      <h6>Nuestra tienda</h6>
       <CardImages products={products} />;
     </div>
   );

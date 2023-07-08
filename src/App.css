@@ -1,9 +1,4 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1rem;
-  text-align: center;
-}
+
 
 body {
   background-image: url("./assets/background.jpg");
@@ -18,11 +13,31 @@ body {
 }
 
 @media all and (min-width: 375px) {
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+  
+    text-align: center;
+  }
+  .imgContainer h6{
+    width: 95%;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(21, 21, 77);
+    padding: 0.4rem;
+    margin-top: 0.7rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: whitesmoke;
+  }
+  .listContainer{
+    padding: 1rem;
+  }
+  
   .cart-products {
     font-size: 1.3rem;
     font-weight: 700;
     color: rgb(21, 21, 77);
-
     padding: 0.4rem;
     margin-top: 0.7rem;
     border-radius: 5px;
@@ -73,5 +88,12 @@ body {
     margin-bottom: 0;
     font-weight: 700;
     font-size: 1rem;
+  }
+}
+
+@media all and(min-width:768px){
+  .imgContainer{
+    display: flex;
+    flex-direction: column;
   }
 }

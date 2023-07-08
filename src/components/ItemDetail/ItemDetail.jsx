@@ -15,7 +15,7 @@ const ItemDetail = ({
 }) => {
    
   const [cart, setCart] = useContext(CartContext);
-  console.log(id)
+  
 
 
 
@@ -71,8 +71,7 @@ const ItemDetail = ({
 
   const quantityPerItem = getQuantity(id);
 
-  console.log(quantityPerItem);
-  console.log(cart);
+  
 
   return (
     <div className="ItemDetail">
