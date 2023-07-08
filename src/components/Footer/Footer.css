@@ -1,4 +1,8 @@
 footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
     background: #11998e; 
     background: -webkit-linear-gradient(
       to right,
