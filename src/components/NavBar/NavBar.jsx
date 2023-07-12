@@ -1,6 +1,7 @@
 import "./NavBar.css";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar,  } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import FormSearch from "../FormSearch/FormSearch";
 
 import slider from "./assets/sli.png";
 import Cartwidget from "../Cartwidget/Cartwidget";
@@ -15,7 +16,7 @@ const NavBar = () => {
       </figure>
       <Navbar className="bg-navbar " expand="lg">
         <Container>
-          <Link to="">
+          <Link to="/">
             <span className="title-logo">Puppy Palace</span>
           </Link>
 
@@ -52,6 +53,8 @@ const NavBar = () => {
           </Link>
         </div>
       </Navbar>
+      <FormSearch />
+      
     </>
   );
 };

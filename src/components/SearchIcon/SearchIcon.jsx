@@ -2,11 +2,11 @@ import Button from "react-bootstrap/Button";
 import "./SearchIcon.css";
 const SearchIcon = () => {
   return (
-    <Button className="button-search" variant="outline-success" size="sm">
+    <Button className="button-search " variant="outline-success" size="sm" type="submit">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
+        width="20"
+        height="20"
         fill="currentColor"
         className="bi bi-search"
         viewBox="0 0 16 16"

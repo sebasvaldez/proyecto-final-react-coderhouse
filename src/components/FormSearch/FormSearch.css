@@ -1,0 +1,22 @@
+@media all and (min-width:360px){
+    .form-search{
+        width:100%;
+        padding-top: .2rem;
+        padding-bottom: .2rem;
+        padding-left: .6rem;
+        padding-right: .6rem;
+        background: #11998e; 
+        background: -webkit-linear-gradient(
+          to right,
+          #38ef7d,
+          #11998e
+        ); 
+        background: linear-gradient(
+          to right,
+          #38ef7d,
+          #11998e
+        );
+        
+        
+    }
+}

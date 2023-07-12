@@ -2,7 +2,7 @@ import "./ItemDetail.css";
 import { Button } from "react-bootstrap";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartProvider";
-import { useParams } from "react-router-dom";
+
 
 const ItemDetail = ({
   id,
@@ -16,8 +16,6 @@ const ItemDetail = ({
    
   const [cart, setCart] = useContext(CartContext);
   
-
-
 
   const addToCart = () => {
     setCart((currentItems) => {

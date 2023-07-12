@@ -11,6 +11,7 @@ import CartListPage from "../views/CartListPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import ItemSearchContainer from "./components/ItemSearchContainer/ItemSearchContainer";
 const App = () => {
   return (
     <CartProvider>
@@ -23,7 +24,8 @@ const App = () => {
           <Route path="/category/snacks" element={<SnacksPage />} />
           <Route path="/category/:id" element={<ItemListContainer />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
-          <Route path="/cart/cartlist" element={<CartListPage/>} />
+          <Route path="/cart/cartlist" element={<CartListPage />} />
+          <Route path="/search/searchlist" element={<ItemSearchContainer />} />
           <Route path="*" element={<h1>404 NOT FOUND</h1>} />
         </Routes>
         <Footer />

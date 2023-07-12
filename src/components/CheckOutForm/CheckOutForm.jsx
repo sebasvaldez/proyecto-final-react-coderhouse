@@ -32,8 +32,6 @@ const CheckOutForm = () => {
     date: new Date().toString(),
   };
 
-  useEffect(() => {}, []);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -51,69 +49,63 @@ const CheckOutForm = () => {
     } else {
       setMailError(true);
     }
-
-    //setCart([]);
-    //setMailError(false);
   };
 
   return (
     <>
-    
-    <Form className="check-form mt-5" onSubmit={handleSubmit}>
-     
-      <Form.Group className="mb-3 " controlId="formBasicEmail">
-        <Form.Control
-          type="text"
-          placeholder="Nombre"
-          required
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-        />
-      </Form.Group>
+      <Form className="check-form mt-5" onSubmit={handleSubmit}>
+        <Form.Group className="mb-3 " controlId="formBasicEmail">
+          <Form.Control
+            type="text"
+            placeholder="Nombre"
+            required
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3 " controlId="formBasicEmail">
-        <Form.Control
-          type="tel"
-          placeholder="Telefono sin 0 ni 15"
-          required
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-        />
-      </Form.Group>
+        <Form.Group className="mb-3 " controlId="formBasicEmail">
+          <Form.Control
+            type="tel"
+            placeholder="Telefono sin 0 ni 15"
+            required
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3 " controlId="formBasicEmail">
-        <Form.Control
-          type="email"
-          placeholder="Ingrese su e-mail"
-          required
-          value={mail}
-          onChange={(e) => setMail(e.target.value)}
-        />
-      </Form.Group>
+        <Form.Group className="mb-3 " controlId="formBasicEmail">
+          <Form.Control
+            type="email"
+            placeholder="Ingrese su e-mail"
+            required
+            value={mail}
+            onChange={(e) => setMail(e.target.value)}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3 " controlId="formBasicEmail2">
-        <Form.Control
-          type="email"
-          placeholder="Repita su e-mail"
-          required
-          value={mail2}
-          onChange={(e) => setMail2(e.target.value)}
-        />
-      </Form.Group>
-      {mailError && <p className="mail-error">Los mails no coinciden</p>}
+        <Form.Group className="mb-3 " controlId="formBasicEmail2">
+          <Form.Control
+            type="email"
+            placeholder="Repita su e-mail"
+            required
+            value={mail2}
+            onChange={(e) => setMail2(e.target.value)}
+          />
+        </Form.Group>
+        {mailError && <p className="mail-error">Los mails no coinciden</p>}
 
-      <Button disabled={loading} variant="success" type="submit">
-        Enviar pedido
-      </Button>
-    </Form>
-    {loading && (
-      <div className="overlay">
-
-        <Spinner />
-      </div>
-    )}
+        <Button disabled={loading} variant="success" type="submit">
+          Enviar pedido
+        </Button>
+      </Form>
+      {loading && (
+        <div className="overlay">
+          <Spinner />
+        </div>
+      )}
     </>
   );
 };
