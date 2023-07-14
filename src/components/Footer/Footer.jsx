@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="container-fluid text-center">
         <div className="row">
           <div className=" mt-md-0 mt-3">
-            <h5 className="text-uppercase link mb-2 text-center">
+            <span className="text-uppercase  mb-2 text-center text-white ">
               Proyecto final - curso React
-            </h5>
+            </span>
           </div>
 
           <hr className="clearfix w-100 d-md-none py-0 mt-2 " />

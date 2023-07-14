@@ -1,0 +1,9 @@
+.not-found {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 1rem;
+}
+.not-found img {
+  width: 100%;
+}

@@ -12,6 +12,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import ItemSearchContainer from "./components/ItemSearchContainer/ItemSearchContainer";
+import NotFound from "./components/NotFound/NotFound";
+
 const App = () => {
   return (
     <CartProvider>
@@ -26,7 +28,7 @@ const App = () => {
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart/cartlist" element={<CartListPage />} />
           <Route path="/search/searchlist" element={<ItemSearchContainer />} />
-          <Route path="*" element={<h1>404 NOT FOUND</h1>} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
         <Footer />
       </Router>
