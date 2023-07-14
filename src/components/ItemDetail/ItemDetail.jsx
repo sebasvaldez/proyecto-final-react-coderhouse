@@ -2,7 +2,7 @@ import "./ItemDetail.css";
 import { Button } from "react-bootstrap";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartProvider";
-
+import { CartAdd, CartRemove } from "../Cartwidget/Cartwidget";
 
 const ItemDetail = ({
   id,
@@ -13,9 +13,7 @@ const ItemDetail = ({
   precio,
   categoria,
 }) => {
-   
   const [cart, setCart] = useContext(CartContext);
-  
 
   const addToCart = () => {
     setCart((currentItems) => {
@@ -69,40 +67,48 @@ const ItemDetail = ({
 
   const quantityPerItem = getQuantity(id);
 
-  
-
   return (
     <div className="ItemDetail">
-      <h2>{nombre}</h2>
-      <figure>
-        <img src={url_imagen} alt="" />
-      </figure>
+      <div className="ItemDetail-img">
+        <h2>{nombre}</h2>
+        <figure>
+          <img src={url_imagen} alt="" />
+        </figure>
+      </div>
+      <div className="ItemDetail-container">
+
+        
       <div className="ItemDetail-info">
         <h3>${precio}</h3>
         <p>Categoria: {categoria}</p>
         {stock > 0 ? <p>Producto disponible</p> : <p>Producto no disponible</p>}
         <p>{descripcion}</p>
         <p>Unidades: {stock}</p>
-        
       </div>
-      <Button
-        className="bg-success mb-3"
-        onClick={() => {
-          addToCart();
-        }}
-      >
-        {quantityPerItem === 0 ? "Agregar al carrito" : "Agregar más"}
-      </Button>
+      <div className="buttons-item-detail">
+        <Button
+          className="bg-success mb-3 me-3 "
+          size="sm"
+          onClick={() => {
+            addToCart();
+          }}
+        >
+          {quantityPerItem === 0 ? "Agregar" : "Agregar más"} <CartAdd />
+        </Button>
 
-      <Button
-        disabled={quantityPerItem === 0}
-        className="bg-success mb-3"
-        onClick={() => {
-          removeFromCart();
-        }}
-      >
-        Eliminar del carrito
-      </Button>
+        <Button
+          disabled={quantityPerItem === 0}
+          className="bg-danger mb-3 me-3"
+          size="sm"
+          onClick={() => {
+            removeFromCart();
+          }}
+        >
+          Eliminar
+          <CartRemove />
+        </Button>
+      </div>
+      </div>
     </div>
   );
 };

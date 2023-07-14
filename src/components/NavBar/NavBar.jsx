@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import FormSearch from "../FormSearch/FormSearch";
 
 import slider from "./assets/sli.png";
-import Cartwidget from "../Cartwidget/Cartwidget";
+import {Cartwidget} from "../Cartwidget/Cartwidget";
 
 const NavBar = () => {
   return (

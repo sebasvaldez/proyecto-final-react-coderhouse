@@ -9,6 +9,7 @@
 
 @media (min-width: 375px) {
     .ItemDetail{
+        display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 30px;
@@ -44,23 +45,63 @@
         
 
     }
+    .buttons-item-detail{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.4rem;
+        margin-top: 1rem;
+    }
 }
 
 @media (min-width: 768px) {
+    .ItemDetail-container{
+        flex-direction: column;
+        width: 60%;
+    }
     .ItemDetail{
         flex-direction: row;
         align-items: start;
         justify-content: center;
     }
     .ItemDetail figure{
-        width: 30%;
+        width: 60%;
         display: flex;
         margin-right: 20px;
+        margin: 0 auto;
+       
+    }
+    .ItemDetail figure img{
+        width: 100%;
     }
     
     .ItemDetail-info{
-        width: 30%;
+        width: 90%;
         margin: 0 auto;
-        margin-left: 20px;
+        margin-left: 10px;
+    }
+    .ItemDetail-info h3{
+        font-weight: 700;
+    }
+    .ItemDetail h2{
+        width: 100%;
+        text-align: center;
+    }
+    .buttons-item-detail{
+        flex-direction: row;
+        justify-content: start;
+    }
+    .ItemDetail-img{
+        width: 40%;
+    }
+}
+
+@media all and (min-width:1024px){
+    .ItemDetail-img{
+        width:60%;
+    }
+    .ItemDetail-info{
+        width: 90%;
+        margin: 0 auto;
+        margin-left: 10px;  
     }
 }
