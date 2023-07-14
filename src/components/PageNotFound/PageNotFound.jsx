@@ -1,7 +1,7 @@
 import notFound from './assets/404-not-found-2.jpg'
 import './NotFound.css'
 
-const NotFound = () => {
+const PageNotFound = () => {
   return (
     <figure className='not-found'>
         <img src={notFound} alt="" />
@@ -9,4 +9,4 @@ const NotFound = () => {
   )
 }
 
-export default NotFound
+export default PageNotFound

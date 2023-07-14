@@ -9,7 +9,7 @@ const ItemSearchContainer = () => {
   const [search, setSearch] = useContext(SearchContext);
 
   
-  console.log(search);
+
   const arrayResults = search;
 
   if (arrayResults.length == 0 || search == []) {

@@ -1,0 +1,36 @@
+@media all and (min-width: 360px) {
+  .not-found {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 1rem;
+  }
+  .not-found img {
+    width: 100%;
+  }
+  .title-not-found h1 {
+    font-size: 1.8rem;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 700;
+    padding: .6rem;
+  }
+}
+
+@media all and (min-width:768px){
+  .not-found{
+    width: 65%;
+  }
+  .title-not-found h1{
+    font-size: 3rem;
+  }
+}
+
+@media all and (min-width:1024px){
+  .not-found{
+    width: 50%;
+  }
+  .title-not-found h1{
+    font-size: 3.5rem;
+  }
+}
