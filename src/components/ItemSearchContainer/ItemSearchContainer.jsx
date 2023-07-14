@@ -5,30 +5,18 @@ import CardImages from "../CardImages/CardImages";
 import ItemNotFound from "../ItemNotFound/ItemNotFound";
 
 const ItemSearchContainer = () => {
-  const [products, setProducts] = useState([]);
-  const [inputSearch, setInputSearch] = useContext(SearchContext);
-  const [search, setSearch] = useState([]);
+ 
+  const [search, setSearch] = useContext(SearchContext);
 
-  useEffect(() => {
-    getProducts().then((response) => setProducts(response));
-  }, []);
+  
+  console.log(search);
+  const arrayResults = search;
 
-  const arrayResults = [];
-  products.forEach((product) => {
-    if (
-      product.nombre.toLowerCase().includes(inputSearch.toLowerCase()) ||
-      product.descripcion.toLowerCase().includes(inputSearch.toLowerCase())
-    ) {
-      arrayResults.push(product);
-    }
-  });
-
-  console.log(inputSearch)
-
-  if (arrayResults.length == 0) {
+  if (arrayResults.length == 0 || search == []) {
+    return <ItemNotFound />;
+  } else if (search == "") {
     return <ItemNotFound />;
   } else {
-    
     return (
       <div className="imgContainer">
         <CardImages products={arrayResults} />

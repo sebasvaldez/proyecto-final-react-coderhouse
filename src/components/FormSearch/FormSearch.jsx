@@ -1,27 +1,46 @@
-import { Form, Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import "./FormSearch.css";
 import SearchIcon from "../SearchIcon/SearchIcon";
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { getProducts } from "../../../asyncMock";
+import { useContext, useState, useEffect } from "react";
 import { SearchContext } from "../../contexts/CartProvider";
 
 const FormSearch = () => {
-    const [word, setWord] = useState("")    
+  const [products, setProducts] = useState([]);
 
-    const [search, setSearch] = useContext(SearchContext);
-    
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setSearch(word);
-       
+  const [word, setWord] = useState("");
 
+  const [search, setSearch] = useContext(SearchContext);
+
+  useEffect(() => {
+    getProducts().then((response) => setProducts(response));
+  }, []);
+
+  const handleSearch = (products) => {
+    const arrayResults = [];
+    products.forEach((product) => {
+      if (
+        product.nombre.toLowerCase().includes(word.toLowerCase()) ||
+        product.descripcion.toLowerCase().includes(word.toLowerCase())
+      ) {
+        arrayResults.push(product);
+      }
+    });
+
+    return arrayResults;
   };
 
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const arrayResults = handleSearch(products);
+    setSearch(arrayResults);
+  };
   return (
     <div className="form-search">
       <Form className="d-flex" onSubmit={handleSubmit}>
         <Form.Control
+          required
           type="search"
           placeholder="Buscar"
           className="me-2"
@@ -29,9 +48,11 @@ const FormSearch = () => {
           value={word}
           onChange={(e) => setWord(e.target.value)}
         />
-        <Link to="search/searchlist">
-          <SearchIcon />
-        </Link>
+        {/* <Button className="btn btn-outline-success text-white" type="submit">
+          <Link to="search/searchlist">buscar</Link>
+        </Button> */}
+
+        <SearchIcon />
       </Form>
     </div>
   );
