@@ -7,7 +7,9 @@ import {
   getDoc,
   addDoc,
 } from "firebase/firestore";
-import { db } from "./src/firebase/firebase.config.js";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+
+import { db, auth } from "./src/firebase/firebase.config.js";
 
 //Buscador de todos los productos
 export const getProducts = async () => {
@@ -60,5 +62,17 @@ export const createOrder = async (order) => {
     return numId;
   } catch (error) {
     console.error("Error adding document: ", error);
+  }
+};
+
+//crear usuarios en firebase auth
+
+export const signUp = async (email, password) => {
+  try {
+   const userCreated= await createUserWithEmailAndPassword(auth, email, password);
+  
+   return userCreated;
+  } catch (error) {
+    console.error("Error creando usuario: ", error);
   }
 };

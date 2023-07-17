@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import CartProvider from "./contexts/CartProvider";
+import AuthProvider from "./contexts/authProvider";
 import HomePage from "../views/HomePage";
 import AccesoriesPage from "../views/AccesoriesPage";
 import AestheticPage from "../views/AestheticPage";
@@ -13,26 +14,35 @@ import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import ItemSearchContainer from "./components/ItemSearchContainer/ItemSearchContainer";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
+import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
 
 const App = () => {
   return (
-    <CartProvider>
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/category/estetica" element={<AestheticPage />} />
-          <Route path="/category/accesorios" element={<AccesoriesPage />} />
-          <Route path="/category/snacks" element={<SnacksPage />} />
-          <Route path="/category/:id" element={<ItemListContainer />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
-          <Route path="/cart/cartlist" element={<CartListPage />} />
-          <Route path="/search/searchlist" element={<ItemSearchContainer />} />
-          <Route path="*" element={<PageNotFound/>} />
-        </Routes>
-        <Footer />
-      </Router>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/category/estetica" element={<AestheticPage />} />
+            <Route path="/category/accesorios" element={<AccesoriesPage />} />
+            <Route path="/category/snacks" element={<SnacksPage />} />
+            <Route path="/category/:id" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/cart/cartlist" element={<CartListPage />} />
+            <Route
+              path="/search/searchlist"
+              element={<ItemSearchContainer />}
+            />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </CartProvider>
+    </AuthProvider>
   );
 };
 

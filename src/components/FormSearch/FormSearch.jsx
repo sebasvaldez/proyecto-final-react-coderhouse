@@ -48,9 +48,6 @@ const FormSearch = () => {
           value={word}
           onChange={(e) => setWord(e.target.value)}
         />
-        {/* <Button className="btn btn-outline-success text-white" type="submit">
-          <Link to="search/searchlist">buscar</Link>
-        </Button> */}
 
         <SearchIcon />
       </Form>
