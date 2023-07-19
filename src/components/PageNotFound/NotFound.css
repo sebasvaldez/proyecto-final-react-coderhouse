@@ -28,7 +28,7 @@
 
 @media all and (min-width:1024px){
   .not-found{
-    width: 50%;
+    width: 40%;
   }
   .title-not-found h1{
     font-size: 3.5rem;

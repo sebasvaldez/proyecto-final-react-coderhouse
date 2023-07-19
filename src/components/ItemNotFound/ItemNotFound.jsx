@@ -6,7 +6,7 @@ const ItemNotFound = () => {
     <div className='title-not-found'>  
     
     <h1>Producto no encontrado</h1>
-    <figure className='not-found'>
+    <figure className='not-found w-25'>
       <img src={ItemNotImg} alt="" />
     </figure>
     </div>

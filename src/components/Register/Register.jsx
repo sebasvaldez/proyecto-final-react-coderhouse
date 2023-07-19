@@ -19,6 +19,8 @@ const Register = () => {
    setTimeout(() => {
      console.log(userCreated.user);
 
+     ////minuto 58:00!!!https://www.youtube.com/watch?v=H_vEJt5Id_I&t=745s
+
    }, 1500);
 
     setUser({ email: "", password: "" });

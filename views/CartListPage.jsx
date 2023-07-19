@@ -50,7 +50,7 @@ const CartListPage = () => {
             </div>
           );
         })}
-        <h2>Total price: {totalPrice}</h2>
+        <h2>Total price: ${totalPrice}</h2>
         
 
         <CheckOutForm />
