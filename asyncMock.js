@@ -7,7 +7,7 @@ import {
   getDoc,
   addDoc,
 } from "firebase/firestore";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 import { db, auth } from "./src/firebase/firebase.config.js";
 
@@ -68,11 +68,22 @@ export const createOrder = async (order) => {
 //crear usuarios en firebase auth
 
 export const signUp = async (email, password) => {
-  try {
-   const userCreated= await createUserWithEmailAndPassword(auth, email, password);
-  
-   return userCreated;
-  } catch (error) {
-    console.error("Error creando usuario: ", error);
-  }
+   await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+
+};
+ 
+
+//login usuarios en firebase auth
+
+export const signIn = async (email, password) => {
+   await signInWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+
 };

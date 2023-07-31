@@ -16,6 +16,8 @@ import ItemSearchContainer from "./components/ItemSearchContainer/ItemSearchCont
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
+import CarouselSliders from "./components/CarouselSliders/CarouselSliders";
+
 
 const App = () => {
   return (
@@ -23,6 +25,7 @@ const App = () => {
       <CartProvider>
         <Router>
           <NavBar />
+         <CarouselSliders />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/category/estetica" element={<AestheticPage />} />

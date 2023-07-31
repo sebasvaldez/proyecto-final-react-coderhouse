@@ -2,32 +2,44 @@ import { useAuth } from "../../contexts/authProvider";
 import "./Register.css";
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { signUp } = useAuth();
 
   const [user, setUser] = useState({ email: "", password: "" });
+  const [error, setError] = useState();
+  const navigate = useNavigate();
 
   const handleChange = ({ target: { name, value } }) => {
     setUser({ ...user, [name]: value });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-   const userCreated= await signUp(user.email, user.password);
+    try {
+      e.preventDefault();
+      setError("");
 
-   setTimeout(() => {
-     console.log(userCreated.user);
-
-     ////minuto 58:00!!!https://www.youtube.com/watch?v=H_vEJt5Id_I&t=745s
-
-   }, 1500);
-
-    setUser({ email: "", password: "" });
+      await signUp(user.email, user.password);
+      setUser({ email: "", password: "" });
+      navigate('/login');
+    } catch (error) {
+      //setError(error.code);
+      if (error.code === "auth/invalid-email") {
+        setError("El correo electrónico no es válido");
+      }
+      if (error.code === "auth/email-already-in-use") {
+        setError("El correo electrónico ya está en uso");
+      }
+      if (error.code === "auth/weak-password") {
+        setError("La contraseña debe tener al menos 6 caracteres");
+      }
+    }
   };
 
   return (
     <div className="register">
+      {error && <p className="error">{error}</p>}
       <Form onSubmit={handleSubmit} className="w-100">
         <Form.Group className="mb-3" controlId="formGroupEmail">
           <Form.Control

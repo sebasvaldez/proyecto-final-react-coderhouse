@@ -1,5 +1,5 @@
-import { createContext, useState, useContext } from "react";
-import { signUp } from "../../asyncMock.js";
+import { createContext, useContext } from "react";
+import { signUp, signIn } from "../../asyncMock.js";
 
 export const authContext = createContext();
 
@@ -11,7 +11,9 @@ export const useAuth = () => {
 
 const AuthProvider = ({ children }) => {
   return (
-    <authContext.Provider value={{ signUp }}>{children}</authContext.Provider>
+    <authContext.Provider value={{ signUp, signIn }}>
+      {children}
+    </authContext.Provider>
   );
 };
 
