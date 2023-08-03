@@ -19,16 +19,34 @@
     margin: 0 auto;
     margin-bottom: 1rem;
   }
+  .login-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-weight: 700;
+  }
+  .register-text{
+    margin-top: 1rem;
+  }
+  .register-text a {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-weight: 600;
+  }
 }
 
- @media all and (min-width:768px){
-    .login{
-        width: 70%;
-    }
- }
+@media all and (min-width: 768px) {
+  .login {
+    width: 70%;
+  }
+  .login-title {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+}
 
- @media all and (min-width:1024px){
-    .login{
-        width: 40%;
-    }
- }
+@media all and (min-width: 1024px) {
+  .login {
+    width: 40%;
+  }
+}

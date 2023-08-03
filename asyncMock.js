@@ -7,7 +7,11 @@ import {
   getDoc,
   addDoc,
 } from "firebase/firestore";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 
 import { db, auth } from "./src/firebase/firebase.config.js";
 
@@ -68,22 +72,24 @@ export const createOrder = async (order) => {
 //crear usuarios en firebase auth
 
 export const signUp = async (email, password) => {
-   await createUserWithEmailAndPassword(
-    auth,
-    email,
-    password
-  );
-
+  await createUserWithEmailAndPassword(auth, email, password);
 };
- 
 
 //login usuarios en firebase auth
 
 export const signIn = async (email, password) => {
-   await signInWithEmailAndPassword(
+  const userCredentials = await signInWithEmailAndPassword(
     auth,
     email,
     password
   );
+  console.log(userCredentials.user.uid);
+};
 
+
+
+//logout usuarios en firebase auth
+
+export const logOut = async () => {
+ await signOut(auth);
 };

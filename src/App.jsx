@@ -17,7 +17,7 @@ import PageNotFound from "./components/PageNotFound/PageNotFound";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import CarouselSliders from "./components/CarouselSliders/CarouselSliders";
-
+import ProtectedRoutes from "./components/ProtectedRoutes/ProtectedRoutes";
 
 const App = () => {
   return (
@@ -25,7 +25,7 @@ const App = () => {
       <CartProvider>
         <Router>
           <NavBar />
-         <CarouselSliders />
+          <CarouselSliders />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/category/estetica" element={<AestheticPage />} />
@@ -33,7 +33,14 @@ const App = () => {
             <Route path="/category/snacks" element={<SnacksPage />} />
             <Route path="/category/:id" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
-            <Route path="/cart/cartlist" element={<CartListPage />} />
+            <Route
+              path="/cart/cartlist"
+              element={
+                <ProtectedRoutes>
+                  <CartListPage />
+                </ProtectedRoutes>
+              }
+            />
             <Route
               path="/search/searchlist"
               element={<ItemSearchContainer />}

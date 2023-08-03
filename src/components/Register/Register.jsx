@@ -22,7 +22,7 @@ const Register = () => {
 
       await signUp(user.email, user.password);
       setUser({ email: "", password: "" });
-      navigate('/login');
+      navigate("/login");
     } catch (error) {
       //setError(error.code);
       if (error.code === "auth/invalid-email") {
@@ -38,7 +38,16 @@ const Register = () => {
   };
 
   return (
+
+    <>
+    <h1 className="text-center login-title">
+        Registrá tu correo electrónico en Puppy Palace
+      </h1>
+    
+    
+    
     <div className="register">
+      
       {error && <p className="error">{error}</p>}
       <Form onSubmit={handleSubmit} className="w-100">
         <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -66,6 +75,7 @@ const Register = () => {
         </Button>
       </Form>
     </div>
+    </>
   );
 };
 

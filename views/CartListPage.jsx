@@ -1,12 +1,13 @@
-import { useState, useContext } from "react";
+import {  useContext } from "react";
 import { CartContext } from "../src/contexts/CartProvider";
 import TrashIcon from "../src/components/TrashIcon/TrashIcon";
 import { Button } from "react-bootstrap";
 import CheckOutForm from "../src/components/CheckOutForm/CheckOutForm";
 import { CartListEmpty } from "../src/components/CartList/CartList.jsx";
-import { createOrder } from "../asyncMock";
+
 
 const CartListPage = () => {
+
   const [cart, setCart] = useContext(CartContext);
 
   const cuantity = cart.reduce((acc, current) => {

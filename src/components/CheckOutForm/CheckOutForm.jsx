@@ -7,6 +7,7 @@ import { CartContext } from "../../contexts/CartProvider";
 import Spinner from "../Spinner/Spinner";
 
 const CheckOutForm = () => {
+ 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [mail, setMail] = useState("");
